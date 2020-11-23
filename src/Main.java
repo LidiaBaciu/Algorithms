@@ -1,3 +1,5 @@
+import mathematics.Strings;
+
 import java.util.Arrays;
 
 import static mathematics.Equation.quadParse;
@@ -15,6 +17,8 @@ public class Main {
 
         String[] pieces = quadParse("2x^2 + 2x -3x -25 +15 =0");
         System.out.println(Arrays.toString(pieces));
+
+        Strings.countUpperCaseCharacters();
     }
 
 }
