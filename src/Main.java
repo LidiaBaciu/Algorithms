@@ -2,6 +2,9 @@ import graphs.BreadthFirstSearch;
 import graphs.DepthFirstSearch;
 import graphs.Node;
 import mathematics.Strings;
+import trees.BinaryTree;
+import trees.BinaryTreePreOrder;
+import trees.TreeNode;
 
 import java.util.Arrays;
 
@@ -27,7 +30,7 @@ public class Main {
         String reverseIt = "Lidia";
         System.out.println(Strings.recursiveReverseString(reverseIt));
 
-         */
+
         Node node40 =new Node(40);
         Node node10 =new Node(10);
         Node node20 =new Node(20);
@@ -58,6 +61,16 @@ public class Main {
         depthFirstSearch.resetVisitedNodes(node40);
         System.out.println("\nThe BFS traversal of the graph is ");
         breadthFirstSearch.bfs(node40);
+
+         */
+
+        BinaryTreePreOrder binaryTreePreOrder = new BinaryTreePreOrder();
+        TreeNode rootNode = BinaryTree.createBinaryTree();
+
+        System.out.println("Using Recursive solution:");
+        binaryTreePreOrder.recursivePreOrder(rootNode);
+        System.out.println("\nUsing Iterative solution:");
+        binaryTreePreOrder.iterativePreOrder(rootNode);
     }
 
 }
