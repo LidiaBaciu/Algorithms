@@ -1,5 +1,10 @@
 import graphs.GraphTraversal;
+import linkedList.LinkedList;
+import linkedList.Node;
 import trees.*;
+
+import static linkedList.LinkedList.printList;
+import static linkedList.LinkedList.reverseLinkedList;
 
 
 public class Main {
@@ -20,10 +25,11 @@ public class Main {
         String reverseIt = "Lidia";
         System.out.println(Strings.recursiveReverseString(reverseIt));
 
-         */
-
         GraphTraversal.runTests();
         BinaryTree.runTests();
+         */
+
+        LinkedList.runTests();
     }
 
 }
