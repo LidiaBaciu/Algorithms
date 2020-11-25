@@ -3,6 +3,7 @@ import graphs.DepthFirstSearch;
 import graphs.Node;
 import mathematics.Strings;
 import trees.BinaryTree;
+import trees.BinaryTreeInOrder;
 import trees.BinaryTreePreOrder;
 import trees.TreeNode;
 
@@ -65,12 +66,18 @@ public class Main {
          */
 
         BinaryTreePreOrder binaryTreePreOrder = new BinaryTreePreOrder();
+        BinaryTreeInOrder binaryTreeInOrder = new BinaryTreeInOrder();
         TreeNode rootNode = BinaryTree.createBinaryTree();
 
-        System.out.println("Using Recursive solution:");
+        System.out.println("PreOrder: Using Recursive solution:");
         binaryTreePreOrder.recursivePreOrder(rootNode);
-        System.out.println("\nUsing Iterative solution:");
+        System.out.println("\nPreOrder: Using Iterative solution:");
         binaryTreePreOrder.iterativePreOrder(rootNode);
+
+        System.out.println("InOrder: Using Recursive solution:");
+        binaryTreeInOrder.recursiveInOrder(rootNode);
+        System.out.println("\nInOrder: Using Iterative solution:");
+        binaryTreeInOrder.recursiveInOrder(rootNode);
     }
 
 }
