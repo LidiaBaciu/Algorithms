@@ -2,10 +2,7 @@ import graphs.BreadthFirstSearch;
 import graphs.DepthFirstSearch;
 import graphs.Node;
 import mathematics.Strings;
-import trees.BinaryTree;
-import trees.BinaryTreeInOrder;
-import trees.BinaryTreePreOrder;
-import trees.TreeNode;
+import trees.*;
 
 import java.util.Arrays;
 
@@ -67,6 +64,8 @@ public class Main {
 
         BinaryTreePreOrder binaryTreePreOrder = new BinaryTreePreOrder();
         BinaryTreeInOrder binaryTreeInOrder = new BinaryTreeInOrder();
+        BinaryTreePostOrder binaryTreePostOrder = new BinaryTreePostOrder();
+
         TreeNode rootNode = BinaryTree.createBinaryTree();
 
         System.out.println("PreOrder: Using Recursive solution:");
@@ -74,10 +73,15 @@ public class Main {
         System.out.println("\nPreOrder: Using Iterative solution:");
         binaryTreePreOrder.iterativePreOrder(rootNode);
 
-        System.out.println("InOrder: Using Recursive solution:");
+        System.out.println("\nInOrder: Using Recursive solution:");
         binaryTreeInOrder.recursiveInOrder(rootNode);
         System.out.println("\nInOrder: Using Iterative solution:");
-        binaryTreeInOrder.recursiveInOrder(rootNode);
+        binaryTreeInOrder.iterativeInOrder(rootNode);
+
+        System.out.println("\nPostOrder: Using Recursive solution:");
+        binaryTreePostOrder.recursivePostOrder(rootNode);
+        System.out.println("\nPostOrder: Using Iterative solution:");
+        binaryTreePostOrder.iterativePostOrder(rootNode);
     }
 
 }
