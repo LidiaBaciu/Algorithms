@@ -4,6 +4,7 @@ import graphs.Node;
 import mathematics.Strings;
 import trees.*;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import static mathematics.Equation.quadParse;
@@ -91,6 +92,9 @@ public class Main {
         TreeNode node30 = new TreeNode(30);
         System.out.println("\nLowest common ancestor for node 5 and 30:");
         System.out.println(BinaryTree.lowestCommonAncestor(rootNode,node5,node30).data);
+
+        System.out.println("\nPrinting all paths to leafs:");
+        BinaryTree.printAllPathsToLeaf(rootNode, new int[1000], 0);
     }
 
 }

@@ -1,5 +1,7 @@
 package trees;
 
+import java.util.ArrayList;
+
 public class BinaryTree {
 
     public static TreeNode createBinaryTree()
@@ -11,9 +13,7 @@ public class BinaryTree {
         TreeNode node60=new TreeNode(60);
         TreeNode node50=new TreeNode(50);
         TreeNode node70=new TreeNode(70);
-
         TreeNode node5=new TreeNode(5);
-        TreeNode node45=new TreeNode(45);
         TreeNode node55=new TreeNode(55);
 
         rootNode.left=node20;
@@ -24,7 +24,6 @@ public class BinaryTree {
 
         node60.left=node50;
         node60.right=node70;
-
         node10.left=node5;
         node50.right=node55;
 
@@ -51,5 +50,26 @@ public class BinaryTree {
         }else {
             return left;
         }
+    }
+
+    public static void printAllPathsToLeaf(TreeNode node, int[] path, int length){
+        if(node == null){
+            return;
+        }
+
+        //path.add(length, node.data);
+        path[length] = node.data;
+        length++;
+
+        if(node.left == null && node.right == null){
+            for (int i = 0; i < length; i++) {
+                System.out.print(" "+path[i]);
+            }
+            System.out.println();
+            return;
+        }
+
+        printAllPathsToLeaf(node.left, path, length);
+        printAllPathsToLeaf(node.right, path, length);
     }
 }
