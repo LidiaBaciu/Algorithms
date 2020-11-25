@@ -27,4 +27,25 @@ public class Strings {
         }
         return count;
     }
+
+    public static String recursiveReverseString(String input){
+        //check it there is only one character left
+        if(input.length() == 1){
+            return input;
+        } else {
+            /*return the concatenation of the last character
+            and call the function again but remove the character already added
+             */
+            return input.charAt(input.length()-1)
+                    + recursiveReverseString(input.substring(0, input.length()-1));
+        }
+    }
+
+    public static String iterativeReverseString(String input){
+        String result = "";
+        for(int currentPosition = input.length()-1; currentPosition >= 0; currentPosition--){
+            result = result + input.charAt(currentPosition);
+        }
+        return result;
+    }
 }
