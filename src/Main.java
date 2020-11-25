@@ -105,6 +105,7 @@ public class Main {
             System.out.println("Level is: " + entry.getKey() + " and sum is: " + entry.getValue() );
 
         System.out.println("\nMaximum value from the tree is: " + BinaryTree.recursiveGetMaximumValue(rootNode));
+        System.out.println("\nFor the node with data=60, level is: " + BinaryTree.getLevelOfNode(rootNode, 60, 1));
     }
 
 }
