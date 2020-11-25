@@ -2,11 +2,11 @@ package trees;
 
 public class TreeNode {
 
-    int data;
+    public int data;
     TreeNode left;
     TreeNode right;
 
-    TreeNode(int data){
+    public TreeNode(int data){
         this.data = data;
     }
 

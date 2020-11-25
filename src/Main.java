@@ -86,6 +86,11 @@ public class Main {
 
         System.out.println("\nLevelOrder: Using Iterative solution:");
         binaryTreeLevelOrder.levelOrderTraversal(rootNode);
+
+        TreeNode node5 = new TreeNode(5);
+        TreeNode node30 = new TreeNode(30);
+        System.out.println("\nLowest common ancestor for node 5 and 30:");
+        System.out.println(BinaryTree.lowestCommonAncestor(rootNode,node5,node30).data);
     }
 
 }
