@@ -1,10 +1,55 @@
 package trees;
 
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.TreeMap;
 
 public class BinaryTree {
 
+    public static void runTests(){
+        BinaryTreePreOrder binaryTreePreOrder = new BinaryTreePreOrder();
+        BinaryTreeInOrder binaryTreeInOrder = new BinaryTreeInOrder();
+        BinaryTreePostOrder binaryTreePostOrder = new BinaryTreePostOrder();
+        BinaryTreeLevelOrder binaryTreeLevelOrder = new BinaryTreeLevelOrder();
+
+        TreeNode rootNode = BinaryTree.createBinaryTree();
+
+        System.out.println("PreOrder: Using Recursive solution:");
+        binaryTreePreOrder.recursivePreOrder(rootNode);
+        System.out.println("\nPreOrder: Using Iterative solution:");
+        binaryTreePreOrder.iterativePreOrder(rootNode);
+
+        System.out.println("\nInOrder: Using Recursive solution:");
+        binaryTreeInOrder.recursiveInOrder(rootNode);
+        System.out.println("\nInOrder: Using Iterative solution:");
+        binaryTreeInOrder.iterativeInOrder(rootNode);
+
+        System.out.println("\nPostOrder: Using Recursive solution:");
+        binaryTreePostOrder.recursivePostOrder(rootNode);
+        System.out.println("\nPostOrder: Using Iterative solution:");
+        binaryTreePostOrder.iterativePostOrder(rootNode);
+
+        System.out.println("\nLevelOrder: Using Iterative solution:");
+        binaryTreeLevelOrder.levelOrderTraversal(rootNode);
+
+        TreeNode node5 = new TreeNode(5);
+        TreeNode node30 = new TreeNode(30);
+        System.out.println("\nLowest common ancestor for node 5 and 30:");
+        System.out.println(BinaryTree.lowestCommonAncestor(rootNode,node5,node30).data);
+
+        System.out.println("\nPrinting all paths to leafs:");
+        BinaryTree.printAllPathsToLeaf(rootNode, new int[1000], 0);
+
+        System.out.println("\nVertical sum of binary tree will be:");
+        TreeMap<Integer,Integer> treeNodeMap = new TreeMap<>();
+        BinaryTree.printVerticalSum(rootNode, treeNodeMap, 0);
+        for(Map.Entry<Integer,Integer> entry:treeNodeMap.entrySet())
+            System.out.println("Level is: " + entry.getKey() + " and sum is: " + entry.getValue() );
+
+        System.out.println("\nMaximum value from the tree is: " + BinaryTree.recursiveGetMaximumValue(rootNode));
+        System.out.println("\nFor the node with data=60, level is: " + BinaryTree.getLevelOfNode(rootNode, 60, 1));
+
+    }
     public static TreeNode createBinaryTree()
     {
         TreeNode rootNode =new TreeNode(40);

@@ -1,5 +1,6 @@
 import graphs.BreadthFirstSearch;
 import graphs.DepthFirstSearch;
+import graphs.GraphTraversal;
 import graphs.Node;
 import mathematics.Strings;
 import trees.*;
@@ -31,81 +32,10 @@ public class Main {
         String reverseIt = "Lidia";
         System.out.println(Strings.recursiveReverseString(reverseIt));
 
-
-        Node node40 =new Node(40);
-        Node node10 =new Node(10);
-        Node node20 =new Node(20);
-        Node node30 =new Node(30);
-        Node node60 =new Node(60);
-        Node node50 =new Node(50);
-        Node node70 =new Node(70);
-
-        node40.addNeighbours(node10);
-        node40.addNeighbours(node20);
-        node10.addNeighbours(node30);
-        node20.addNeighbours(node10);
-        node20.addNeighbours(node30);
-        node20.addNeighbours(node60);
-        node20.addNeighbours(node50);
-        node30.addNeighbours(node60);
-        node60.addNeighbours(node70);
-        node50.addNeighbours(node70);
-
-        DepthFirstSearch depthFirstSearch = new DepthFirstSearch();
-        BreadthFirstSearch breadthFirstSearch = new BreadthFirstSearch();
-
-        System.out.println("The DFS traversal of the graph using recursion ");
-        depthFirstSearch.recursiveDFS(node40);
-        depthFirstSearch.resetVisitedNodes(node40);
-        System.out.println("\nThe DFS traversal of the graph using iteration ");
-        depthFirstSearch.recursiveDFS(node40);
-        depthFirstSearch.resetVisitedNodes(node40);
-        System.out.println("\nThe BFS traversal of the graph is ");
-        breadthFirstSearch.bfs(node40);
-
          */
 
-        BinaryTreePreOrder binaryTreePreOrder = new BinaryTreePreOrder();
-        BinaryTreeInOrder binaryTreeInOrder = new BinaryTreeInOrder();
-        BinaryTreePostOrder binaryTreePostOrder = new BinaryTreePostOrder();
-        BinaryTreeLevelOrder binaryTreeLevelOrder = new BinaryTreeLevelOrder();
-
-        TreeNode rootNode = BinaryTree.createBinaryTree();
-
-        System.out.println("PreOrder: Using Recursive solution:");
-        binaryTreePreOrder.recursivePreOrder(rootNode);
-        System.out.println("\nPreOrder: Using Iterative solution:");
-        binaryTreePreOrder.iterativePreOrder(rootNode);
-
-        System.out.println("\nInOrder: Using Recursive solution:");
-        binaryTreeInOrder.recursiveInOrder(rootNode);
-        System.out.println("\nInOrder: Using Iterative solution:");
-        binaryTreeInOrder.iterativeInOrder(rootNode);
-
-        System.out.println("\nPostOrder: Using Recursive solution:");
-        binaryTreePostOrder.recursivePostOrder(rootNode);
-        System.out.println("\nPostOrder: Using Iterative solution:");
-        binaryTreePostOrder.iterativePostOrder(rootNode);
-
-        System.out.println("\nLevelOrder: Using Iterative solution:");
-        binaryTreeLevelOrder.levelOrderTraversal(rootNode);
-
-        TreeNode node5 = new TreeNode(5);
-        TreeNode node30 = new TreeNode(30);
-        System.out.println("\nLowest common ancestor for node 5 and 30:");
-        System.out.println(BinaryTree.lowestCommonAncestor(rootNode,node5,node30).data);
-
-        System.out.println("\nPrinting all paths to leafs:");
-        BinaryTree.printAllPathsToLeaf(rootNode, new int[1000], 0);
-
-        System.out.println("\nVertical sum of binary tree will be:");
-        TreeMap<Integer,Integer> treeNodeMap = new TreeMap<>();
-        BinaryTree.printVerticalSum(rootNode, treeNodeMap, 0);
-        for(Map.Entry<Integer,Integer> entry:treeNodeMap.entrySet())
-            System.out.println("Level is: " + entry.getKey() + " and sum is: " + entry.getValue() );
-
-        System.out.println("\nMaximum value from the tree is: " + BinaryTree.recursiveGetMaximumValue(rootNode));
-        System.out.println("\nFor the node with data=60, level is: " + BinaryTree.getLevelOfNode(rootNode, 60, 1));
+        GraphTraversal.runTests();
+        BinaryTree.runTests();
     }
 
 }
