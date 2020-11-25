@@ -103,6 +103,8 @@ public class Main {
         BinaryTree.printVerticalSum(rootNode, treeNodeMap, 0);
         for(Map.Entry<Integer,Integer> entry:treeNodeMap.entrySet())
             System.out.println("Level is: " + entry.getKey() + " and sum is: " + entry.getValue() );
+
+        System.out.println("\nMaximum value from the tree is: " + BinaryTree.recursiveGetMaximumValue(rootNode));
     }
 
 }

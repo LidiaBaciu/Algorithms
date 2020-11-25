@@ -93,4 +93,21 @@ public class BinaryTree {
         //So root level is 0 and right side is positive
         printVerticalSum(startNode.right, treeNodeMap, level+1);
     }
+
+    public static int recursiveGetMaximumValue(TreeNode root){
+        int max = Integer.MIN_VALUE;
+        int value, left, right;
+
+        if(root != null){
+            value = root.data;
+            left = recursiveGetMaximumValue(root.left);
+            right = recursiveGetMaximumValue(root.right);
+
+            max = left > right ? left : right;
+            if(max < value){
+                max = value;
+            }
+        }
+        return max;
+    }
 }
