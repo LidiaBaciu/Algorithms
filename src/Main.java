@@ -6,6 +6,8 @@ import trees.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Map;
+import java.util.TreeMap;
 
 import static mathematics.Equation.quadParse;
 import static mathematics.SumNumbers.findSumAllNumbers;
@@ -95,6 +97,12 @@ public class Main {
 
         System.out.println("\nPrinting all paths to leafs:");
         BinaryTree.printAllPathsToLeaf(rootNode, new int[1000], 0);
+
+        System.out.println("\nVertical sum of binary tree will be:");
+        TreeMap<Integer,Integer> treeNodeMap = new TreeMap<>();
+        BinaryTree.printVerticalSum(rootNode, treeNodeMap, 0);
+        for(Map.Entry<Integer,Integer> entry:treeNodeMap.entrySet())
+            System.out.println("Level is: " + entry.getKey() + " and sum is: " + entry.getValue() );
     }
 
 }

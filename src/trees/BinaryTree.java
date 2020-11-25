@@ -1,6 +1,7 @@
 package trees;
 
 import java.util.ArrayList;
+import java.util.TreeMap;
 
 public class BinaryTree {
 
@@ -13,8 +14,8 @@ public class BinaryTree {
         TreeNode node60=new TreeNode(60);
         TreeNode node50=new TreeNode(50);
         TreeNode node70=new TreeNode(70);
-        TreeNode node5=new TreeNode(5);
         TreeNode node55=new TreeNode(55);
+        TreeNode node5=new TreeNode(5);
 
         rootNode.left=node20;
         rootNode.right=node60;
@@ -24,9 +25,8 @@ public class BinaryTree {
 
         node60.left=node50;
         node60.right=node70;
-        node10.left=node5;
         node50.right=node55;
-
+        node30.left=node5;
         return rootNode;
     }
 
@@ -71,5 +71,26 @@ public class BinaryTree {
 
         printAllPathsToLeaf(node.left, path, length);
         printAllPathsToLeaf(node.right, path, length);
+    }
+
+    public static void printVerticalSum(TreeNode startNode, TreeMap<Integer, Integer> treeNodeMap, int level){
+        if(startNode == null){
+            return;
+        }
+
+        //Decrease level by 1 when iterating over left child
+        //So root level is 0 and left side is negative
+        printVerticalSum(startNode.left, treeNodeMap, level-1);
+
+        if(treeNodeMap.get(level) != null){
+            Integer sum = treeNodeMap.get(level) + startNode.data;
+            // Adding current node data to previous stored value to get the sum
+            treeNodeMap.put(level, sum);
+        } else {
+            treeNodeMap.put(level, startNode.data);
+        }
+        //Increase level by 1 when iterating over right child
+        //So root level is 0 and right side is positive
+        printVerticalSum(startNode.right, treeNodeMap, level+1);
     }
 }
