@@ -65,6 +65,7 @@ public class Main {
         BinaryTreePreOrder binaryTreePreOrder = new BinaryTreePreOrder();
         BinaryTreeInOrder binaryTreeInOrder = new BinaryTreeInOrder();
         BinaryTreePostOrder binaryTreePostOrder = new BinaryTreePostOrder();
+        BinaryTreeLevelOrder binaryTreeLevelOrder = new BinaryTreeLevelOrder();
 
         TreeNode rootNode = BinaryTree.createBinaryTree();
 
@@ -82,6 +83,9 @@ public class Main {
         binaryTreePostOrder.recursivePostOrder(rootNode);
         System.out.println("\nPostOrder: Using Iterative solution:");
         binaryTreePostOrder.iterativePostOrder(rootNode);
+
+        System.out.println("\nLevelOrder: Using Iterative solution:");
+        binaryTreeLevelOrder.levelOrderTraversal(rootNode);
     }
 
 }
